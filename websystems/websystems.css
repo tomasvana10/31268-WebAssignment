@@ -1,0 +1,178 @@
+:root {
+  --content-primary: #d7f9ff;
+  --content-secondary: #98bcff;
+  --content-tertiary: #6d96e3;
+
+  --bg-primary: #fafafa;
+  --bg-secondary: #e0e0e0; /* 10% increase in black value from --bg-primary */
+  --bg-tertiary: #d4d4d4; /* 5% increase in black value from --bg-secondary */
+
+  --accent: #ff857a;
+
+  --text: #141414;
+  --link: #cc6a62; /* 20% increase in black value from --accent */
+  --link-visited: #995049; /* 20% increase in black value from --link */
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter_18pt-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg-primary);
+  font-size: 15px;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus,
+button:focus {
+  outline: 1px solid var(--accent);
+}
+
+hr {
+  color: var(--bg-tertiary);
+  margin: 10px auto;
+  width: 100%;
+}
+
+.btn,
+.btn:visited {
+  text-decoration: none;
+  color: var(--text);
+  padding: 7.5px;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 10px;
+  text-align: center;
+  user-select: none;
+  width: clamp(95px, 95px, 150px);
+}
+
+.btn:hover {
+  border: 1px solid var(--accent);
+}
+
+.btn:focus {
+  border: 1px solid var(--link);
+  background-color: var(--bg-secondary);
+}
+
+.accent-span {
+  color: var(--accent);
+}
+
+.active-page {
+  font-weight: bold;
+}
+
+/* I wanted to add padding to the content wrapper, however, this caused the background of the
+footer to not reach its edges, so instead I opted to add padding to all the child elements of the
+content wrapper. */
+header {
+  padding: 10px 20px 0;
+}
+
+#content {
+  padding: 0 20px;
+}
+
+footer {
+  padding: 10px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 900px) { /* at this breakpoint, it is more suitable to display the navbar below the title */
+  header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+header nav {
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#main-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05),
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+}
+
+#content-wrapper {
+  display: flex;
+  min-height: 96vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--bg-tertiary);
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.footer-content div h3 + p {
+  font-style: italic;
+}
+
+.sitemap {
+  list-style-type: none;
+}
+
+.sitemap li {
+  display: inline;
+  white-space: pre;
+}
+
+.sitemap li:not(:last-child)::after {
+  content: "  | ";
+}
