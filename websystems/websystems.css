@@ -45,6 +45,7 @@ body {
   background-color: var(--bg-primary);
   font-size: 15px;
   font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6em;
 }
 
 a {
@@ -100,28 +101,9 @@ footer to not reach its edges, so instead I opted to add padding to all the chil
 content wrapper. */
 header {
   padding: 10px 20px 0;
-}
-
-#content {
-  padding: 0 20px;
-}
-
-footer {
-  padding: 10px 20px;
-}
-
-header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-@media (max-width: 900px) { /* at this breakpoint, it is more suitable to display the navbar below the title */
-  header {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-  }
 }
 
 header nav {
@@ -129,6 +111,27 @@ header nav {
   gap: 0.3em;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (max-width: 900px) {
+  /* at this breakpoint, it is more suitable to display the navbar below the title */
+  header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  padding: 10px 20px;
+  margin-top: auto;
+  background-color: var(--bg-tertiary);
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+#content {
+  padding: 0 20px 10px 20px;
 }
 
 #main-wrapper {
@@ -147,16 +150,9 @@ header nav {
   justify-content: flex-start;
 }
 
-footer {
-  margin-top: auto;
-  background-color: var(--bg-tertiary);
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-}
-
 .footer-content {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
 }
 
