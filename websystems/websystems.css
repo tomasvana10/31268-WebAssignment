@@ -43,9 +43,9 @@
 body {
   color: var(--text);
   background-color: var(--bg-primary);
-  font-size: 15px;
+  font-size: 15.5px;
   font-family: "Inter", Arial, sans-serif;
-  line-height: 1.6em;
+  line-height: 1.4rem;
 }
 
 a {
@@ -130,10 +130,6 @@ footer {
   border-bottom-right-radius: 9px;
 }
 
-#content {
-  padding: 0 20px 10px 20px;
-}
-
 #main-wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -145,9 +141,18 @@ footer {
 
 #content-wrapper {
   display: flex;
-  min-height: 96vh;
+  min-height: 98vh;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+#content {
+  padding: 0 20px 10px 20px; 
+}
+
+#content h2, h3, h4 {
+  margin-top: 37.5px;
+  margin-bottom: 10px;
 }
 
 .footer-content {
