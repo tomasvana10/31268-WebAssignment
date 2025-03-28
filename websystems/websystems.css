@@ -1,17 +1,31 @@
 :root {
-  --content-primary: #d7f9ff;
-  --content-secondary: #98bcff;
-  --content-tertiary: #6d96e3;
+  --primary: #fafafa;
+  --secondary: #e0e0e0; /* 10% increase in black value from --primary */
+  --tertiary: #d4d4d4; /* 5% increase in black value from --secondary */
 
-  --bg-primary: #fafafa;
-  --bg-secondary: #e0e0e0; /* 10% increase in black value from --bg-primary */
-  --bg-tertiary: #d4d4d4; /* 5% increase in black value from --bg-secondary */
+  --table-alt: #ededed; /* 5% increase in black value from --primary */
 
   --accent: #ff857a;
 
   --text: #141414;
   --link: #cc6a62; /* 20% increase in black value from --accent */
   --link-visited: #995049; /* 20% increase in black value from --link */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #121212;
+    --secondary: #1e1e1e;
+    --tertiary: #2a2a2a;
+
+    --table-alt: #1f1f1f;
+
+    --accent: #ff857a;
+
+    --text: #eaeaea;
+    --link: #ffb3ab;
+    --link-visited: #ff857a;
+  }
 }
 
 @font-face {
@@ -42,10 +56,10 @@
 
 body {
   color: var(--text);
-  background-color: var(--bg-primary);
+  background-color: var(--primary);
   font-size: 15.5px;
   font-family: "Inter", Arial, sans-serif;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
 }
 
 a {
@@ -61,8 +75,57 @@ button:focus {
   outline: 1px solid var(--accent);
 }
 
+table {
+  border-spacing: 0;
+}
+
+th,
+td {
+  border: 1px solid var(--tertiary);
+  padding: 10px;
+}
+
+table thead tr > * {
+  background: var(--secondary);
+}
+
+table tbody tr:nth-child(even) {
+  background: var(--table-alt);
+}
+
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+#content li {
+  padding-left: 0.5rem;
+}
+
+#content li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+code {
+  padding: 3px;
+  border: 1px solid var(--tertiary);
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+
 hr {
-  color: var(--bg-tertiary);
+  color: var(--tertiary);
   margin: 10px auto;
   width: 100%;
 }
@@ -72,7 +135,7 @@ hr {
   text-decoration: none;
   color: var(--text);
   padding: 7.5px;
-  border: 1px solid var(--bg-tertiary);
+  border: 1px solid var(--tertiary);
   border-radius: 10px;
   text-align: center;
   user-select: none;
@@ -85,10 +148,10 @@ hr {
 
 .btn:focus {
   border: 1px solid var(--link);
-  background-color: var(--bg-secondary);
+  background-color: var(--secondary);
 }
 
-.accent-span {
+.colour-accent {
   color: var(--accent);
 }
 
@@ -125,7 +188,7 @@ header nav {
 footer {
   padding: 10px 20px;
   margin-top: auto;
-  background-color: var(--bg-tertiary);
+  background-color: var(--tertiary);
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
 }
@@ -133,7 +196,7 @@ footer {
 #main-wrapper {
   max-width: 960px;
   margin: 0 auto;
-  border: 1px solid var(--bg-tertiary);
+  border: 1px solid var(--tertiary);
   border-radius: 10px;
   box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05),
     0px 0px 0px 1px rgba(0, 0, 0, 0.08);
@@ -147,12 +210,19 @@ footer {
 }
 
 #content {
-  padding: 0 20px 10px 20px; 
+  padding: 0 20px 10px 20px;
 }
 
-#content h2, h3, h4 {
+/* all headings preceded by something (often a paragraph) should have larger spacing */
+#content * ~ h1,
+* ~ h2,
+* ~ h3 {
   margin-top: 37.5px;
-  margin-bottom: 10px;
+  margin-bottom: 7.5px;
+}
+
+#content * ~ h4 {
+  margin-bottom: 7.5px;
 }
 
 .footer-content {
@@ -176,4 +246,8 @@ footer {
 
 .sitemap li:not(:last-child)::after {
   content: "  | ";
+}
+
+.structure-image {
+  width: clamp(0px, 600px, 100%);
 }

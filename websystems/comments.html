@@ -13,7 +13,7 @@
   <div id="main-wrapper">
     <div id="content-wrapper">
       <header>
-        <h1><span class="accent-span">WebSys</span> Assignment</h1>
+        <h1><span class="colour-accent">WebSys</span> Assignment</h1>
         <nav>
           <a class="btn" draggable="false" href="index.html">Home</a>
           <a class="btn" draggable="false" href="past.html">Past</a>
@@ -22,7 +22,116 @@
         </nav>
       </header>
       <hr>
-      <main id="content"></main>
+      <main id="content">
+        <h2>Comments</h2>
+        <p>This page covers the technical aspects of this website — its overall structure, style explanations, graphic
+          design aspects, and further discussions.</p>
+
+        <h3><span class="colour-accent">Overall Structure</span></h3>
+        <p>The website consists of four pages under the <code>websystems/</code> directory:</p>
+
+        <ul>
+          <li><code>index.html</code></li>
+          <li><code>past.html</code></li>
+          <li><code>future.html</code></li>
+          <li><code>comments.html</code> (this page)</li>
+        </ul>
+        <p>Each page is mostly comprised of boilerplate HTML to define the header and footer and their contents.</p>
+
+        <p>The header is comprised of the website's title and a series of anchors (styled as buttons) to navigate
+          between the pages, while the footer includes some additional information as well as a sitemap.</p>
+
+        <p>The reason why each page has both a navbar and a sitemap is to provide navigation controls on both the top
+          and bottom of the page, minimising the need to scroll in some cases.</p>
+
+        <h3><span class="colour-accent">Internal Structure</span></h3>
+        <h4>Wrappers</h4>
+        <ol>
+          <li><code>div#main-wrapper</code> — Serves as a container for the <b>entire page</b>.</li>
+          <li><code>div#content-wrapper</code> — Serves as a container for the <b>header</b>, <b>main content</b> and
+            <b>footer</b>.
+          </li>
+        </ol>
+        <p>A <code>hr</code> element is placed after <code>#content-wrapper</code> to mark the end of the header and the
+          start of the main content.</p>
+
+        <h4>Header</h4>
+        <ol>
+          <li><code>h1</code> — The title of the page - <em>WebSys Assignment</em>.</li>
+          <li><code>nav</code> and <code>nav a.btn</code> — A navbar with links to all the pages.</li>
+        </ol>
+
+        <h4>Main Content</h4>
+        <p>The main content of the page, such as <code>p</code> and heading elements are stored in a single
+          container, <code>main#content</code>. The <code>main</code> element is a semantic HTML element that indicates
+          where the main content of the page is stored. Using it was appropriate for this case.</p>
+
+        <h4>Footer</h4>
+        <ol>
+          <li><code>div.footer-content</code> — Contains two divs displayed in a flexbox row layout, which include the
+            course number and sitemap.</li>
+          <li><code>p</code> — Holds the copyright disclaimer.</li>
+        </ol>
+        <p>Like the space between the header and the main content, the children of the footer are also divided by a
+          <code>hr</code> element.
+        </p>
+
+        <h4>Structure Diagram</h4>
+        <img class="structure-image" src="images/structure.png"
+          alt="Coloured overlays denoting this website's structure by HTML hierarchy.">
+
+        <h3><span class="colour-accent">CSS Styles and selectors</span></h3>
+        <p>This section will explain some of the styles and selectors that are less understood by newer web
+          developers. Explanations of styles involve a brief description of the style property itself, then an in-depth
+          explanation of how a certain value of that style was used in the website's design.</p>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Type</th>
+              <th scope="col">Name</th>
+              <th scope="col">Explanation</th>
+              <th scope="col">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Style</td>
+              <td><code>box-sizing</code></td>
+              <td>The <code>box-sizing</code> property comes with two options, <code>content-box</code> (the default)
+                and <code>border-box</code>, which was used for this page.<br><br>Content box sizing interprets the
+                padding and
+                border of an element to add on to its defined width, whereas border box sizing intrinsically includes
+                the padding and border of an element to fit within its defined width. The <code>border-box</code> sizing
+                property is far more intuitive than its counterpart which is why it was used.
+              </td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Style</td>
+              <td><code>display</code></td>
+              <td>The <code>display</code> property outlines how an element should be rendered in the DOM. For this
+                website, the <code>flex</code> value was primarily used (excluding the default display value,
+                <code>block</code>).<br><br>The CSS flexbox layout allows elements to be arranged by columns or rows,
+                and is very flexible when it comes to positioning elements and defining their proportions.<br><br>This
+                page uses a flexbox display within the header and the footer, as well as the content wrapper.
+              </td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Style</td>
+              <td><code>justify-content</code></td>
+              <td>Explanation...</td>
+              <td>p ~ h1</td>
+            </tr>
+            <tr>
+              <td>Combinator</td>
+              <td>Subsequent-sibling combinator</td>
+              <td>Explanation...</td>
+              <td>p ~ h1</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
       <footer>
         <div class="footer-content">
           <div>
