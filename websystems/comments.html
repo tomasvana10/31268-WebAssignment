@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="websystems.css">
+  <!--Favicon from https://canvas.uts.edu.au/-->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <title>WebSys Assignment - Comments</title>
 </head>
@@ -13,7 +14,7 @@
   <div id="main-wrapper">
     <div id="content-wrapper">
       <header>
-        <h1><span class="colour-accent">WebSys</span> Assignment</h1>
+        <h1><span class="text-accent">WebSys</span> Assignment</h1>
         <nav>
           <a class="btn" draggable="false" href="index.html">Home</a>
           <a class="btn" draggable="false" href="past.html">Past</a>
@@ -27,15 +28,55 @@
         <p>This page covers the technical aspects of this website — its overall structure, style explanations, graphic
           design aspects, and further discussions.</p>
 
-        <h3><span class="colour-accent">Overall Structure</span></h3>
-        <p>The website consists of four pages under the <code>websystems/</code> directory:</p>
+        <h3><span class="text-accent">Overall Structure</span></h3>
+        <p>The website consists of 7 key items under the <code>websystems/</code> directory:</p>
 
-        <ul>
-          <li><code>index.html</code></li>
-          <li><code>past.html</code></li>
-          <li><code>future.html</code></li>
-          <li><code>comments.html</code> (this page)</li>
-        </ul>
+        <table class="structure-table">
+          <thead>
+            <tr>
+              <th scope="col">Filename</th>
+              <th scope="col">File type</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>home</td>
+              <td>HTML</td>
+              <td>Introduction to me and my website.</td>
+            </tr>
+            <tr>
+              <td>past</td>
+              <td>HTML</td>
+              <td>Past experiences with computing.</td>
+            </tr>
+            <tr>
+              <td>future</td>
+              <td>HTML</td>
+              <td>Future aspirations.</td>
+            </tr>
+            <tr>
+              <td>comments</td>
+              <td>HTML</td>
+              <td>The technical aspects of the website.</td>
+            </tr>
+            <tr>
+              <td>websystems</td>
+              <td>CSS</td>
+              <td>Provide styling for all HTML files.</td>
+            </tr>
+            <tr>
+              <td>images</td>
+              <td>Directory</td>
+              <td>Store the favicon and diagrams/pictures.</td>
+            </tr>
+            <tr>
+              <td>fonts</td>
+              <td>Directory</td>
+              <td>Store TrueType fonts that are used as the primary font for all pages.</td>
+            </tr>
+          </tbody>
+        </table>
         <p>Each page is mostly comprised of boilerplate HTML to define the header and footer and their contents.</p>
 
         <p>The header is comprised of the website's title and a series of anchors (styled as buttons) to navigate
@@ -44,11 +85,11 @@
         <p>The reason why each page has both a navbar and a sitemap is to provide navigation controls on both the top
           and bottom of the page, minimising the need to scroll in some cases.</p>
 
-        <h3><span class="colour-accent">Internal Structure</span></h3>
+        <h3><span class="text-accent">Internal Structure</span></h3>
         <h4>Wrappers</h4>
         <ol>
-          <li><code>div#main-wrapper</code> — Serves as a container for the <b>entire page</b>.</li>
-          <li><code>div#content-wrapper</code> — Serves as a container for the <b>header</b>, <b>main content</b> and
+          <li><code>div#main-wrapper</code>: Serves as a container for the <b>entire page</b>.</li>
+          <li><code>div#content-wrapper</code>: Serves as a container for the <b>header</b>, <b>main content</b> and
             <b>footer</b>.
           </li>
         </ol>
@@ -57,8 +98,8 @@
 
         <h4>Header</h4>
         <ol>
-          <li><code>h1</code> — The title of the page - <em>WebSys Assignment</em>.</li>
-          <li><code>nav</code> and <code>nav a.btn</code> — A navbar with links to all the pages.</li>
+          <li><code>h1</code>: The title of the page - <em>WebSys Assignment</em>.</li>
+          <li><code>nav</code> and <code>nav a.btn</code>: A navbar with links to all the pages.</li>
         </ol>
 
         <h4>Main Content</h4>
@@ -68,34 +109,48 @@
 
         <h4>Footer</h4>
         <ol>
-          <li><code>div.footer-content</code> — Contains two divs displayed in a flexbox row layout, which include the
+          <li><code>div.footer-content</code>: Contains two divs displayed in a flexbox row layout, which include the
             course number and sitemap.</li>
-          <li><code>p</code> — Holds the copyright disclaimer.</li>
+          <li><code>p</code>: Holds the copyright disclaimer.</li>
         </ol>
         <p>Like the space between the header and the main content, the children of the footer are also divided by a
           <code>hr</code> element.
         </p>
 
         <h4>Structure Diagram</h4>
-        <img class="structure-image" src="images/structure.png"
-          alt="Coloured overlays denoting this website's structure by HTML hierarchy.">
+        <p>This diagram outlines the structure of the website. Sample content is provided in <code>div#content</code>.
+        </p>
+        <img class="structure-image" src="images/structure.png" width="600"
+          alt="Diagram showing the website layout hierarchy with HTML containers like header, content, and the footer.">
+        <h3><span class="text-accent">CSS Classes</span></h3>
+        <p>This section will provide a brief outline of the CSS classes that were used.</p>
+        <ul>
+          <li><code>btn</code>: Styles elements that perform an action, e.g. buttons.</li>
+          <li><code>bg-primary, bg-secondary, etc</code>: Primarily used to demonstrate the colour scheme within
+            <code>&lt;span&gt;</code> elements.
+          </li>
+          <li><code>border-codelike</code>: Apply a style like that of a <code>&lt;code&gt;</code> element.</li>
+          <li><code>nowrap</code>: Prevent an element's text from wrapping in a way that breaks words. Used in table
+            cells to ensure code examples aren't broken.</li>
+          <li><code>active-page</code>: Applied to the button which is used to navigate to the page the user is
+            currently viewing.</li>
+          <li><code>sitemap</code>: Style the sitemap element.</li>
+        </ul>
 
-        <h3><span class="colour-accent">CSS Styles and selectors</span></h3>
-        <p>This section will explain some of the styles and selectors that are less understood by newer web
-          developers. Explanations of styles involve a brief description of the style property itself, then an in-depth
-          explanation of how a certain value of that style was used in the website's design.</p>
-        <table>
+        <h3><span class="text-accent">CSS Styles</span></h3>
+        <p>This section covers some of the more complex style properties, beyond self explanatory ones like
+          <code>color</code>. Each style is first explained in detail, followed by a brief look at how specific values
+          were applied in the website’s design.
+        </p>
+        <table class="style-table">
           <thead>
             <tr>
-              <th scope="col">Type</th>
               <th scope="col">Name</th>
               <th scope="col">Explanation</th>
-              <th scope="col">Example</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Style</td>
               <td><code>box-sizing</code></td>
               <td>The <code>box-sizing</code> property comes with two options, <code>content-box</code> (the default)
                 and <code>border-box</code>, which was used for this page.<br><br>Content box sizing interprets the
@@ -104,33 +159,206 @@
                 the padding and border of an element to fit within its defined width. The <code>border-box</code> sizing
                 property is far more intuitive than its counterpart which is why it was used.
               </td>
-              <td>N/A</td>
             </tr>
             <tr>
-              <td>Style</td>
               <td><code>display</code></td>
               <td>The <code>display</code> property outlines how an element should be rendered in the DOM. For this
-                website, the <code>flex</code> value was primarily used (excluding the default display value,
-                <code>block</code>).<br><br>The CSS flexbox layout allows elements to be arranged by columns or rows,
-                and is very flexible when it comes to positioning elements and defining their proportions.<br><br>This
-                page uses a flexbox display within the header and the footer, as well as the content wrapper.
+                website, the <code>flex</code> value was primarily used. The <code>inline</code> value was also used a
+                single time.<br><br>The flexbox layout allows elements to be arranged by columns or rows,
+                and is very flexible when it comes to positioning elements and defining their proportions. This
+                page uses a flexbox display within the header and the footer, as well as the content wrapper.<br><br>The
+                inline layout makes elements behave like text. This was used in the footer sitemap to force all list
+                items containing the anchor elements into a single line.
               </td>
-              <td>N/A</td>
             </tr>
             <tr>
-              <td>Style</td>
               <td><code>justify-content</code></td>
-              <td>Explanation...</td>
-              <td>p ~ h1</td>
+              <td><code>justify-content</code> controls how the space in between flex items is distributed along the
+                primary axis of a flex container. The site used various different values for this
+                style.<br>
+                <ul>
+                  <li>
+                    <code>space-between</code>: Evenly distributes the space between items, while ensuring
+                    that the first and last item are aligned with the starting and finishing edges. It is used in
+                    <code>.footer-content</code> to position the course number section opposite the sitemap.
+                  </li>
+                  <li>
+                    <code>space-evenly</code>: Ensures the space between and around the items is equal, providing the
+                    most uniform distribution out of all the values for <code>justify-content</code>. It is used in
+                    <code>header</code> to distribute the heading and navbar.
+                  </li>
+                  <li><code>center</code>: Pushes all items flushly together into the center of the flex container. It
+                    is utilised in the <code>nav</code> to center the nav once the <code>flex-direction</code> of the
+                    parent container switches to <code>column</code>.</li>
+                </ul>
+                It is important to note that this property has a "sibling", which is <code>align-content</code>. The
+                difference between them is that <code>justify-content</code> affects distribution in the direction of
+                the main axis (set to <code>row</code> by default), while <code>align-content</code> affects item
+                distribution in the direction of the cross-axis (meaning single row/single column flex containers are
+                unaffected by <code>align-content</code>).
+              </td>
             </tr>
             <tr>
-              <td>Combinator</td>
-              <td>Subsequent-sibling combinator</td>
-              <td>Explanation...</td>
-              <td>p ~ h1</td>
+              <td><code>padding</code></td>
+              <td>Padding is the distance between an element's content and its border. Almost every element, including
+                this very paragraph, has padding.</td>
+            </tr>
+            <tr>
+              <td><code>border</code></td>
+              <td>The border is what wraps around a padded element. It essentially sits in between the padding and
+                margin of an element. This site frequently uses borders, like those around buttons,
+                <code>&lt;code&gt;</code> elements, tables, and the header/footer.
+              </td>
+            </tr>
+            <tr>
+              <td><code>margin</code></td>
+              <td>An element's margin defines how far it is spaced from nearby elements. When considering the
+                padding-border-margin trifecta, the margin is the outmost layer.</td>
             </tr>
           </tbody>
         </table>
+        <h3><span class="text-accent">CSS Combinators</span></h3>
+        <p>This section outlines some of the CSS combinators that were used when styling content. A combinator is used
+          to combine selectors in a way that allows elements to be selected based on their location relative to other
+          elements.</p>
+        <table class="selector-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Explanation</th>
+              <th scope="col">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selector list</td>
+              <td>A comma separated list of selectors that, allowing you to select multiple elements to apply the same
+                styles to. This combination method was used frequently throughout the website.</td>
+              <td><code>h1, h2, h3</code></td>
+            </tr>
+            <tr>
+              <td>Descendant combinator</td>
+              <td>The descendant combinator (denoted by a space) combines two selectors in a way that requires the first
+                selector to be a parent (direct or indirect) of the second selector. This is another combinator that was
+                used often throughout the CSS, in places such as <code>&lt;table&gt;</code> elements on
+                <code>&lt;li&gt;</code> elements nested within different containers.
+              </td>
+              <td><code>.sitemap li</code></td>
+            </tr>
+            <tr>
+              <td>Child combinator</td>
+              <td>The child combinator (<code>&gt;</code>) is used to select an element that is an immediate descendant
+                of the first element. It was used in the website to style all elements inside the table header row
+                element (of specificity <code>table thead tr</code>).</td>
+              <td><code>#id div &gt; h1</code></td>
+            </tr>
+            <tr>
+              <td>Subsequent-sibling combinator</td>
+              <td>The subsequent-sibling combinator (<code>~</code>) allows you to select all elements that are preceded
+                by a certain element. The website utilises this combinator to apply margins to headers if they are
+                preceded by content, using these selectors: <code>#content * ~ h1, * ~ h2, ...</code>, which selects
+                header elements that are preceded by any element (<code>*</code>). If a header is not preceded by
+                anything, it means that is it at the beginning of the <code>#content</code> div, and should not have any
+                top margins.</td>
+              <td><code>h1 ~ p</code></td>
+            </tr>
+            <tr>
+              <td>Next-sibling combinator</td>
+              <td>The next-sibling combinator (<code>+</code>) selects all the elements that follow a certain element.
+                It was used in the website's footer to italicize the first paragraph that followed a
+                <code>&lt;h3&gt;</code> (the course identification).
+              </td>
+              <td><code>h3 + p</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3><span class="text-accent">Graphic Design Aspects</span></h3>
+        <h4>Colouring</h4>
+        <p>Due to the lack of variation in website content, with the only diversity coming from buttons and text
+          elements that carry more importance than just regular paragraphs, an extremely simple colour palette was
+          formulated. It consists of <span class="border-codelike bg-primary">three</span> <span
+            class="border-codelike bg-secondary">consecutively</span> <span
+            class="border-codelike bg-tertiary">darker</span> shades of
+          white for primary colouring, as well as
+          <span class="border-codelike bg-table-alt">additional shade</span> for alternate table rows, and <span
+            class="border-codelike bg-accent">three</span>
+          <span class="border-codelike bg-link">consecutively</span> <span
+            class="border-codelike bg-link-visited text-white">darker</span> orange accent shades for elements
+          such as headings (relating to primary discussions), links, focused elements, and selected elements.
+        </p>
+        <h4>Typefaces</h4>
+        <p>This website uses three typefaces of <strong>Inter</strong> (<b>bold</b>, normal, and <i>italic</i>), an open
+          source free
+          sans-serif font
+          that emphasises high readability and aesthetics. If the user's browser does not support Inter, two fallback
+          fonts were provided to the <code>font-family</code> property: <code class="font-arial">Arial</code>, and <code
+            class="font-sans-serif">sans-serif</code> (sans-serif in this
+          context instructs CSS to find the operating system's default sans-serif font).
+        </p>
+        <h4>Layout</h4>
+        <p>Various layout features have been implemented to improve the ergonomics of the website.</p>
+        <ul>
+          <li><strong>Max width of <code>#main-content</code></strong>: The maximum width of the main content container
+            has been set to
+            <code>960px</code>. Without this restraint, text would expand across the entire screen, making it harder to
+            read.
+          </li>
+          <li><strong>Responsive HTML</strong>: Through the use of media queries, the website can adapt to different
+            screen sizes, such
+            as the alternation between <code>column</code> and <code>row</code> flexbox layouts.</li>
+          <li><strong>Padding</strong>: Almost every element has some amount of padding to make it distinguishable. This
+            approach prevents a crammed website design.</li>
+          <li><strong>Margins</strong>: Margins are used to centre the main content and add spacing between headings to
+            reflect their hierarchy and importance.</li>
+          <li><strong>Interactivity</strong>: Navbar buttons change colour depending on their state (using CSS
+            pseudo-selectors like <code>active</code> and <code>focus</code>). Furthermore, the navbar buttons also
+            indicate which page is active through bolded text.</li>
+          <li><strong>Use of the <code>&lt;code&gt;</code> element</strong>: Placing content that refers to HTML, CSS,
+            or computer science related concepts in code tags helps support the key ideas of the comment page, while
+            also making it easier for the reader to understand the primary concepts that are being discussed.</li>
+        </ul>
+        <h3><span class="text-accent">Accessibility and Ergonomics</span></h3>
+        <p>The <a href="https://www.w3.org/WAI/" target="_blank">Web Accessibility Initiative (WAI)</a> was adhered to
+          when developing the website, to accomodate for a wide range of end-users. Thorough consideration was also
+          given to various other design aspects to improve ergonomics.</p>
+        <h4>Consideration of screen readers</h4>
+        <p>All images used in the website have a defined <code>alt</code> attribute, which describes the content of the
+          image. This is a vital design consideration for screen readers (often used by visually impaired users), as
+          the <code>alt</code> property takes the place of the image. </p>
+        <h4>Compatibility with smaller devices</h4>
+        <figure class="aside">
+          <img class="responsive-image" src="images/responsive.png" width="300"
+            alt="A picture from this site containing a header with a nav and title, as well as some text content, using the dimensions of the iPhone 12.">
+          <figcaption>The layout of this page on a phone.</figcaption>
+        </figure>
+        <p>To ensure the website could be viewed on smaller devices, Firefox's <a
+            href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/"
+            target="_blank">Responsive Design Mode</a> feature was utilised. The website was tested on a variety of
+          dimensions to ensure it was legible and still looked good.</p>
+        <h4>Font sizing, spacing and selection</h4>
+        <p>The font size was reduced from 16 pixels to 15.5 pixels, which suited the design of the website better. Line
+          height was increased to <code>1.6rem</code> to improve readability. The use of the <code>rem</code> unit is
+          vital in this case, as it allows the line spacing to scale with the root font size (what <code>rem</code>)
+          refers to.</p>
+        <h4>Semantic Elements</h4>
+        <p>While most HTML elements carry little to no semantic value, such as the <code>&lt;div&gt;</code> element,
+          some elements such as <code>&lt;h1...h6&gt;</code> and <code>&lt;aside&gt;</code> carry more meaning. One such
+          example is to compare the <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code> elements. The former simply
+          denotes text that is stylised as bold. The latter denotes text that is important to the context it is placed
+          in. Semantic elements such as these gives the website a meaningful structure while also helping screen readers
+          distinguish what part of the page the user is in (a benefit that relates more to semantic elements like
+          <code>&lt;main&gt;</code>).
+        </p>
+        <h4>Anchors</h4>
+        <p>All anchors have the <code>target</code> attribute set to <code>_blank</code>, which makes the anchor's url
+          open in a new tab. It can be annoying when interacting with an anchor overrides the current tab's webpage, so
+          this feature improves the website's ergonomics and useability.</p>
+        <h4>No style appearance</h4>
+        <p>When disabling styles, the website renders well enough that the content can be read and distinguished. One
+          issue was images being too large, so, instead of changing their resolution, the <code>width</code> attribute
+          of the <code>&lt;img&gt;</code> element was set to an integer between 300-600, depending on the image's aspect
+          ratio, to prevent it from exceeding the size of the page. The website's ability to be read and understood
+          without CSS accomodates for some screen readers or viewers who prefer CSS off.</p>
       </main>
       <footer>
         <div class="footer-content">
